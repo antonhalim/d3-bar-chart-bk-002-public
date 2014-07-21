@@ -12,20 +12,3 @@ var election =
 
 ////////// v  code goes below v //////////
 
-var maxValue = 0;
-for (var i=0; i < election.length; i++) {
-  if(election[i].value > maxValue) {
-    maxValue = election[i].value;
-  }
-}
-
-var x = d3.scale.linear()
-    .domain([0, maxValue])
-    .range([0, 420]);
-
-d3.select(".bar-chart")
-  .selectAll("div")
-    .data(election)
-  .enter().append("div")
-    .style("width", function(d) { return x(d.value) + "px"; })
-    .text(function(d) { return d.region; });
