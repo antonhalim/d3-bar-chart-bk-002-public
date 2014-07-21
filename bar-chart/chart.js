@@ -8,6 +8,7 @@ var election =
   ];
 
 ////////// v  code goes below v //////////
+
 var maxValue = 0;
 for (var i=0; i < election.length; i++) {
   if(election[i].value > maxValue) {
@@ -25,17 +26,3 @@ d3.select(".bar-chart")
   .enter().append("div")
     .style("width", function(d) { return x(d.value) + "px"; })
     .text(function(d) { return d.region; });
-
-///////// ^ code goes above ^ //////////
-
-// setTimeout(function() {
-//   election[2].value = 30;
-// }, 500);
-
-// setTimeout(function() {
-//   election[3].value = 9;
-// }, 1000);
-
-// setTimeout(function() {
-//   election[4].value = 35;
-// }, 1500);
