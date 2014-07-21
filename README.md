@@ -1,10 +1,10 @@
 ---
 tags: D3, JavaScript library, data visualization, PhantomCSS, beginner, WIP
 language: JavaScript
-resources: ?
+resources: 
 ---
 
-# Intro to D3.js with Bar Charts
+# Bar Chart Introduction to D3.js
 
 |Section| Sub-Section | 
 |:------:|:-------------:|
@@ -40,3 +40,10 @@ resources: ?
 * To run the tests, from the main folder `d3-bar-chart`, enter `casperjs test bar-chart/testsuite.js`.
 
 ### Getting Started
+
+## Resources
+* [Mike Bostock's Blog](http://bost.ocks.org/mike/) - [Let's Make a Bar Chart](http://bost.ocks.org/mike/bar/)
+* [Wikipedia](http://en.wikipedia.org/) - [D3.js](http://en.wikipedia.org/wiki/D3.js)
+* [CSS Tricks](http://css-tricks.com/) - [Using SVG](http://css-tricks.com/using-svg/)
+* [GitHub](https://github.com/) - [PhantomCSS](https://github.com/Huddle/PhantomCSS)
+* [CasperJS](http://casperjs.org/) - [Docs](http://casperjs.readthedocs.org/en/latest/)
