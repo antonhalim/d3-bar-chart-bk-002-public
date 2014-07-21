@@ -39,7 +39,7 @@ casper.wait(3000, function() {
 });
 
 casper.then(function(){
-	phantomcss.screenshot('.bubble-chart', 'bubble-chart');
+	phantomcss.screenshot('.bar-chart', 'bar-chart');
 });
 
 casper.then( function now_check_the_screenshots(){
