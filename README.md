@@ -57,10 +57,13 @@ x.domain([0, maxTurnOut]);
 var chart = d3.select(".bar-chart");
 ```
 
-* When you draw a bar chart, you know where to find the data. D3, however, doesn't automatically know which data to use. You tell D3 to use the data `election` by 
+* When you draw a bar chart, you know where to find the data. D3, however, doesn't automatically know which data to use. You tell D3 to use the data `election` by binding each element in `election` to a new div. You can do this in two steps or one step, both seen below. For help on method chaining, see [Mike Bostock's blog](http://bost.ocks.org/mike/bar/#chaining).
 
 ```javascript
-chart.selectAll("div").data(election);
+var bar = chart.selectAll("div");
+var barUpdate = bar.data(election);
+// or 
+var barUpdate = chart.selectAll("div").data(election);
 ```
 
 * Mor instructions
