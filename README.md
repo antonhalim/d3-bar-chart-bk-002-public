@@ -19,7 +19,7 @@ resources: 10
 || [Enter](#enter)|
 || [Width and Height](#width-and-height)
 || [Text](#text)
-| [Overview](#overview)||
+| [In Closing](#in-closing)||
 || [Conclusion](#conclusion)
 || [Resources](#resources)
 
@@ -118,7 +118,7 @@ enterBar.style("width", function(d) { return x(d.value) + "px"; });
 * Delete the `.style("height"...` code that you wrote above. Did the bars get as skinny as they were before the height and text were defined? Why or why not?
 * Go ahead and run the test! Reminder, you must be in the main folder `d3-bar-chart` before typing `casperjs test bar-chart/testsuite.js` in your terminal. Does the test pass? Look at the images in the `screenshots` folder and see what it produced.
 
-## Overview
+## In Closing
 
 ### Conclusion
 * D3 is a great way to visualize data online without having to hardcode divs by hand. If you're interested in getting better at D3, follow the [three-part bar chart tutorial](http://bost.ocks.org/mike/bar/), the first part of which this lab is based on, by Mike Bostock.
