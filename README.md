@@ -1,7 +1,7 @@
 ---
 tags: D3, JavaScript library, data visualization, PhantomCSS, beginner, WIP
 language: JavaScript
-resources: 8
+resources: 10
 ---
 
 # Bar Chart Introduction to D3.js
@@ -62,7 +62,8 @@ x.domain([0, maxTurnOut]);
 var chart = d3.select(".bar-chart");
 ```
 
-* When you draw a bar chart, you know where to find the data. D3, however, doesn't automatically know which data to use. You tell D3 to use the data `election` by binding each element in `election` to a new div. You can do this in two steps or one step, both seen below. For help on method chaining, see [Mike Bostock's blog](http://bost.ocks.org/mike/bar/#chaining).
+* When you draw a bar chart, you know where to find the data. D3, however, doesn't automatically know which data to use. You tell D3 to use the data `election` by binding each element in `election` to a new HTML element. Becuase bars on a chart are retangular, binding each data set to a div makes sense. You can make child divs (each representing a county) within the main chart container in two steps or one step, both seen below. In either, you use on D3's [select all](https://github.com/mbostock/d3/wiki/Selections#d3_selectAll) method and pass it an argument of `div` before calling on D3's [data](https://github.com/mbostock/d3/wiki/Selections#data) method and passing it `election`.
+* For help on method chaining, see [Mike Bostock's blog](http://bost.ocks.org/mike/bar/#chaining). 
 
 ```javascript
 var bar = chart.selectAll("div");
@@ -83,5 +84,6 @@ var barUpdate = chart.selectAll("div").data(election);
 * [CasperJS](http://casperjs.org/) - [Docs](http://casperjs.readthedocs.org/en/latest/)
 * [D3](https://github.com/mbostock/d3/) - [Linear Scale](https://github.com/mbostock/d3/wiki/Quantitative-Scales#linear)
 * [D3](https://github.com/mbostock/d3/) - [Select All](https://github.com/mbostock/d3/wiki/Selections#d3_selectAll)
+* [D3](https://github.com/mbostock/d3/) - [Data](https://github.com/mbostock/d3/wiki/Selections#data)
 * [Aligned Left Blog](http://alignedleft.com) - [D3 Scales](http://alignedleft.com/tutorials/d3/scales)
 * [Easy Calculation](http://easycalculation.com/) - [Linear Scale](http://easycalculation.com/maths-dictionary/linear_scale.html)
