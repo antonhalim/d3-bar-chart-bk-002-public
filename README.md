@@ -1,7 +1,7 @@
 ---
 tags: D3, JavaScript library, data visualization, PhantomCSS, beginner, WIP
 language: JavaScript
-resources: 5
+resources: 8
 ---
 
 # Bar Chart Introduction to D3.js
@@ -37,7 +37,7 @@ resources: 5
 ### Getting Started
 * When you use an external JavaScript library, the first step is to require it. Go ahead and require the D3 library in `index.html`.
 * The second step will be to require your JavaScript code that uses the library. Add HTML to `index` the will require `chart.js`.
-* When you make a bar chart by hand, one of the first things you think about if what kind of scale to use. 
+* When you make a bar chart by hand, one of the first things you think about if what kind of scale to use. For a bar chart, a [linear scale](http://easycalculation.com/maths-dictionary/linear_scale.html) is pretty typical.
 * 
 * Another thing that you might think about when drawing a bar chart by hand is how large you want it to be. This will usually manifest as a width and height. In D3, these two values will be two values in an array that is passed as an argument to the `.range` method. Let's make the  
 * To know how to scale each bar in the barchart, you need to find the maximum length of a bar. In the `bar-chart/chart.js` file, make a new variable called `maxValue`. This variable will be equal to the maximum value in `election`. Though you could easily hardcode this value as 40, it would be good practice to interate through the array to find the highest value.
@@ -55,3 +55,4 @@ resources: 5
 * [CasperJS](http://casperjs.org/) - [Docs](http://casperjs.readthedocs.org/en/latest/)
 * [D3](https://github.com/mbostock/d3/) - [Linear Scale](https://github.com/mbostock/d3/wiki/Quantitative-Scales#linear)
 * [Aligned Left Blog](http://alignedleft.com) - [D3 Scales](http://alignedleft.com/tutorials/d3/scales)
+* [Easy Calculation](http://easycalculation.com/) - [Linear Scale](http://easycalculation.com/maths-dictionary/linear_scale.html)
