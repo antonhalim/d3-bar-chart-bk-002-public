@@ -35,7 +35,9 @@ resources: 5
 * To run the tests you must be in the main folder `d3-bar-chart`. In the terminal, enter `casperjs test bar-chart/testsuite.js`.
 
 ### Getting Started
-* To know how to scale each bar in the barchart, you need to find the maximum length of a bar. In the `bar-chart/chart.js` file, make a new variable called `maxValue`. This variable will be equal to the maximum value in `election`. Though you could easily hardcode this value, it would be good practice to interate through the array to find the highest value.
+* Require the D3 library in `index.html`.
+* Require `chart.js` also in `index.html`.
+* To know how to scale each bar in the barchart, you need to find the maximum length of a bar. In the `bar-chart/chart.js` file, make a new variable called `maxValue`. This variable will be equal to the maximum value in `election`. Though you could easily hardcode this value as 40, it would be good practice to interate through the array to find the highest value.
 * More instructions
 * More instructions
 * Mor instructions
