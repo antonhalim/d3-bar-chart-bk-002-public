@@ -82,24 +82,24 @@ var chart = d3.select(".bar-chart");
 * For help on method chaining, see [Mike Bostock's blog](http://bost.ocks.org/mike/bar/#chaining). 
 
 ```javascript
-var bar = chart.selectAll("div");
-var barUpdate = bar.data(election);
+var chartUpdate = chart.selectAll("div")
+var dataBound = chartUpdate.data(election);
 // or 
-var barUpdate = chart.selectAll("div").data(election);
+var dataBound = chart.selectAll("div").data(election);
 ```
 
 ### Enter
 * D3 has only one method to get data to go into the DOM as a visual representation, and that is called the `.enter()` method. It might help to think of the browser window as a stage and the data as actors. The stage starts empty, then actors, or data, enter. Only then are they visible. Call `.enter()` on the variable `chart` and set this equal to the variable `enter`.
 
 ```javascript
-var enter = chart.enter();
+var enter = dataBound.enter();
 ```
 * Chain one last method, `.append` onto the line above. You want this method to instantiate the divs so pass it the argument 'div'. Change the variable's name from `enter` to `enterBar` so we know it's referring to each bar in the bar chart.
 
 ```javascript
-var enter = chart.enter();
+var enter = dataBound.enter();
 // should become
-var enterBar = chart.enter().append("div");
+var enterBar = dataBound.enter().append("div");
 ```
 
 ### Width and Height
