@@ -5,6 +5,8 @@ resources: 10
 ---
 
 # Bar Chart Introduction to D3.js
+
+#### Contents
 |Section| Sub-Section | 
 |:------:|:-------------:|
 |[Overview](#overview)| |
