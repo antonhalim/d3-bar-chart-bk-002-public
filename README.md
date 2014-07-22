@@ -35,12 +35,22 @@ resources: 8
 * To run the tests you must be in the main folder `d3-bar-chart`. In the terminal, enter `casperjs test bar-chart/testsuite.js`.
 
 ### Getting Started
+* You're going to be making a simple bar graph for fake data of the voter turnout for the last election by county.
 * When you use an external JavaScript library, the first step is to require it. Go ahead and require the D3 library in `index.html`.
 * The second step will be to require your JavaScript code that uses the library. Add HTML to `index` the will require `chart.js`.
-* When you make a bar chart by hand, one of the first things you think about if what kind of scale to use. For a bar chart, a [linear scale](http://easycalculation.com/maths-dictionary/linear_scale.html) is pretty typical.
-* 
-* Another thing that you might think about when drawing a bar chart by hand is how large you want it to be. This will usually manifest as a width and height. In D3, these two values will be two values in an array that is passed as an argument to the `.range` method. Let's make the  
-* To know how to scale each bar in the barchart, you need to find the maximum length of a bar. In the `bar-chart/chart.js` file, make a new variable called `maxValue`. This variable will be equal to the maximum value in `election`. Though you could easily hardcode this value as 40, it would be good practice to interate through the array to find the highest value.
+* When you make a bar chart by hand, one of the first things you think about if what kind of scale to use. For a bar chart, a [linear scale](http://easycalculation.com/maths-dictionary/linear_scale.html) is pretty typical. Make a new variable, `x`, and set it equal to `d3.scale.linear();`.
+* Another thing that you might think about when drawing a bar chart by hand is how short and tall you want the bars to be (the bars min height and a max height). In D3, this min and max will be two values in an array that is passed as an argument to the linear scale's `.range` method (remember, you called the scale `x` in the step above). Let's make the the max height 420 pixels and the min height 0 pixels.
+
+```javascript
+x.range([0, 420]);
+```
+* One of the last things you probably think about when drawing a chart by hand is what the the min and max values for the data. In this case, the min value is clearly 4, but lets hardcode it as 0 to allow for some election counties to have a 0% participation rate in the election. In the next step, we'll find the highest percentage of participation.
+* To know how to scale each bar in the barchart, you need to find the maximum length of a bar. In the `bar-chart/chart.js` file, make a new variable called `maxTurnOut`. This variable will be equal to the maximum value in `election`. Though you could easily hardcode this value as 40, it would be good practice to interate through the array to find the highest value.
+* The linear scale has a `.domain` method that accepts and array of two values, much like the `.range` method above. Let's use the values 0 and maxTurnOut to set the domain.
+
+```javascript
+x.domain([0, maxTurnOut]);
+```
 * More instructions
 * More instructions
 * Mor instructions
