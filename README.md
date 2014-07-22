@@ -58,27 +58,27 @@ resources: 10
 
 ### Domain and Range
 * When you make a bar chart by hand, one of the first things you think about if what kind of scale to use. For a bar chart, a [linear scale](http://easycalculation.com/maths-dictionary/linear_scale.html) is pretty typical. Make a new variable, `x`, and set it equal to `d3.scale.linear();`.
-* Another thing that you might think about when drawing a bar chart by hand is how short and long you want the bars to be (the bars min length and a max length). In D3, this min and max will be two values in an array that is passed as an argument to the linear scale's `.range` method (remember, you called the scale `x` in the step above). Let's make the the max height 420 pixels and the min height 0 pixels.
+* Another thing that you might think about when drawing a bar chart by hand is how short and long you want the bars to be (the bars min length and a max length). In D3, this min and max will be two values in an array that is passed as an argument to the linear scale's `.range()` method (remember, you called the scale `x` in the step above). Let's make the the max height 420 pixels and the min height 0 pixels.
 
 ```javascript
 x.range([0, 420]);
 ```
 * One of the last things you probably think about when drawing a chart by hand is what the data's min and max values are. In this case, the min value is clearly 4, but lets hardcode it as 0 to allow for some election counties to have a 0% participation rate in the election. In the next step, we'll find the highest percentage of participation.
 * Make a new variable called `maxTurnOut`. This variable will be equal to the maximum value in `election`. Though you could easily hardcode this value as 40, it would be good practice to interate through the array to find the highest value.
-* The linear scale has a `.domain` method that accepts and array of two values, much like the `.range` method above. Let's use the values 0 and maxTurnOut to set the domain.
+* The linear scale has a `.domain()` method that accepts and array of two values, much like the `.range` method above. Let's use the values 0 and maxTurnOut to set the domain.
 
 ```javascript
 x.domain([0, maxTurnOut]);
 ```
 
 ### Chart Setup
-* When drawing a chart by hand, you must select a poster board or a sheet of paper. This next step is kind of like that. It's time to choose the location of where the chart will be drawn. In this case, select the div with the class `bar-chart`.
+* When drawing a chart by hand, you must select a what surface to draw the chart on and this next step is kind of like that. In this case, select the div with the class `bar-chart`.
 
 ```javascript
 var chart = d3.select(".bar-chart");
 ```
 
-* When you draw a bar chart, you know where to find the data. D3, however, doesn't automatically know which data to use. You tell D3 to use the data `election` by binding each element in `election` to a new HTML element. Because bars on a chart are retangular, binding each data set to a div makes sense. You can tell D3 that you're going to make child divs (each representing a county) within the main chart container in two steps or one step, both seen below. In either, you use on D3's [select all](https://github.com/mbostock/d3/wiki/Selections#d3_selectAll) method and pass it an argument of `div` before calling on D3's [data](https://github.com/mbostock/d3/wiki/Selections#data) method and passing it `election`.
+* When you draw a bar chart, you know where to find the data. D3, however, doesn't automatically know which data to use. You tell D3 to use the data `election` by binding each element in `election` to a new HTML element. Because bars on a chart are retangular, binding each data set to a div makes sense. You can tell D3 that you're going to make child divs (each representing a county) within the parent of chart in two steps or one step, both seen below. In either, you use on D3's [select all](https://github.com/mbostock/d3/wiki/Selections#d3_selectAll) method and pass it an argument of `div` before calling on D3's [data](https://github.com/mbostock/d3/wiki/Selections#data) method and passing it `election`.
 * For help on method chaining, see [Mike Bostock's blog](http://bost.ocks.org/mike/bar/#chaining). 
 
 ```javascript
@@ -89,12 +89,12 @@ var dataBound = chart.selectAll("div").data(election);
 ```
 
 ### Enter
-* D3 has only one method to get data to go into the DOM as a visual representation, and that is called the `.enter()` method. It might help to think of the browser window as a stage and the data as actors. The stage starts empty, then actors, or data, enter. Only then are they visible. Call `.enter()` on the variable `chart` and set this equal to the variable `enter`.
+* D3 has only one method to get data to go into the DOM as a visual representation, and that is called the `.enter()` method. It might help to think of the [DOM](http://en.wikipedia.org/wiki/Document_Object_Model) as a stage and the data as actors. The stage starts empty, then actors, or data, enter. Only then are they visible. Call `.enter()` on the variable `chart` and set this equal to the variable `enter`.
 
 ```javascript
 var enter = dataBound.enter();
 ```
-* Chain one last method, `.append` onto the line above. You want this method to instantiate the divs so pass it the argument 'div'. Change the variable's name from `enter` to `enterBar` so we know it's referring to each bar in the bar chart.
+* Chain one last method, `.append` onto the line above. You want this method to instantiate the divs, each representing a different county, so pass it the argument 'div'. Change the variable's name from `enter` to `enterBar` so you know it's referring to each bar in the bar chart.
 
 ```javascript
 var enter = dataBound.enter();
@@ -104,19 +104,19 @@ var enterBar = dataBound.enter().append("div");
 
 ### Width and Height
 * Remove the "blah blah blah" text from the `bar-chart` div in `index.html`. It was just there because PhantomCSS does not reliably run the testing suite on empty divs.
-* The last thing we need to do is tell each div what its width and height are going to be. On `enterBar`, call `.style()`. Give it arguments of "width" and a function that takes (d) as an argument. This function will return the value of multiplying the value of each object (`d.value`) in `election` by the variable `x`, which will correctly scale their length from a percentage to pixels.
+* The last thing you need to do is tell each div what its width is going to be. On `enterBar`, call `.style()`. Give it arguments of "width" and a function that takes `d`, or data, as its argument. This function will return the value of multiplying the value of each object (`d.value`) in `election` by the variable `x`, which will correctly scale their length from a percentage to pixels.
 
 ```javascript
 enterBar.style("width", function(d) { return x(d.value) + "px"; });
 ```
 * Open `index.html` in your terminal. You should see a barchart at the top of the page. If you inspect the longest bar, it's length should be 420px, just like you specified in the `.range()` method.
-* You may have noticed that these bars are pretty skinny so the next step is to fix their height. Try to do this on your own using the code above for reference. Instead of passing the `.style()` method arguments of `height` and a function, you can just pass it arguments of "height" and a string that is going to be a number followed by "px". 
+* You may have noticed that these bars are pretty skinny so the next step is to fix their height. Use the code above for reference and hardcode the number of pixels instead of relying on a function.
 
 ### Text
-* It is time to add the county names to each bar. Call the method `.text()` on `enterBar` and pass it an argument of a function. This function will take `d` or `data` as an argument and return the region. 
+* It is time to add the county names to each bar. Call the method `.text()` on `enterBar` and pass it an argument of a function. This function will take `d` as an argument and return the region. 
 * Open the chart up in the browser. How does it look?
 * Delete the `.style("height"...` code that you wrote above. Did the bars get as skinny as they were before the height and text were defined? Why or why not?
-* Go ahead and run the test! Does it pass? Look at the images in the `screenshots` folder. Reminder, you must be in the main folder `d3-bar-chart` before typing `casperjs test bar-chart/testsuite.js` in your terminal.
+* Go ahead and run the test! Reminder, you must be in the main folder `d3-bar-chart` before typing `casperjs test bar-chart/testsuite.js` in your terminal. Does the test pass? Look at the images in the `screenshots` folder and see what it produced.
 
 ## Overview
 
