@@ -7,11 +7,13 @@ resources: 10
 # Bar Chart Introduction to D3.js
 |Section| Sub-Section | 
 |:------:|:-------------:|
-|Overview| [Objectives](#objectives)| 
+|[Overview](#overview)| |
+|| [Objectives](#objectives)| 
 || [Intro to D3](#intro-to-d3js)| 
 || [Testing Suite](#testing-suite)|
 || [Tips](#tips)|
-|Instructions| [Getting Started](#getting-started)|
+|[Instructions](#instructions)| |
+|| [Getting Started](#getting-started)|
 || [Domain and Range](#domain-and-range)|
 || [Chart Setup](#chart-setup)|
 || [Enter](#enter)|
@@ -19,7 +21,9 @@ resources: 10
 || [Text](#text)
 || [Conclusion](#conclusion)
 
-## Objectives
+## Overview
+
+### Objectives
 * Get comfortable using a JavaScript library
 * Correctly require and use the [D3.js library](https://github.com/mbostock/d3/wiki)
 * Create a bar chart using D3
@@ -43,6 +47,8 @@ resources: 10
 * You're going to be making a simple bar graph for fake data of the voter turnout by county.
 * Make sure you read through the section on the testing suite and installed CasperJS.
 * If something in this tutorial doesn't make sense, check out the tutorial it's based on [here](http://bost.ocks.org/mike/bar/). Getting a second explaination might do the trick!
+
+## Instructions
 
 ### Getting Started
 * When you use an external JavaScript library, the first step is to require it. Go ahead and require the D3 library in `index.html`. To check that the library is getting loaded correctly, type `d3` into the console when you open `index.html` in the browser. The console should return an object. If it returns `d3 is not defined`, go back and fix your code.
