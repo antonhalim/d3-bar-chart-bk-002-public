@@ -36,8 +36,8 @@ resources: 8
 
 ### Getting Started
 * You're going to be making a simple bar graph for fake data of the voter turnout for the last election by county.
-* When you use an external JavaScript library, the first step is to require it. Go ahead and require the D3 library in `index.html`.
-* The second step will be to require your JavaScript code that uses the library. Add HTML to `index` the will require `chart.js`.
+* When you use an external JavaScript library, the first step is to require it. Go ahead and require the D3 library in `index.html`. To check that the library is getting loaded correctly, type `d3` into the console when you open `index.html` in the browser. The console should return an object. If it returns `d3 is not defined`, go back and fix your code.
+* The second step will be to require your JavaScript code that uses the library. Add HTML to `index` the will require `chart.js`. Open `index.html` in your browser and type `election` the the console to make sure you required `chart.js` correctly. The console should return an array of objects.
 * When you make a bar chart by hand, one of the first things you think about if what kind of scale to use. For a bar chart, a [linear scale](http://easycalculation.com/maths-dictionary/linear_scale.html) is pretty typical. Make a new variable, `x`, and set it equal to `d3.scale.linear();`.
 * Another thing that you might think about when drawing a bar chart by hand is how short and tall you want the bars to be (the bars min height and a max height). In D3, this min and max will be two values in an array that is passed as an argument to the linear scale's `.range` method (remember, you called the scale `x` in the step above). Let's make the the max height 420 pixels and the min height 0 pixels.
 
