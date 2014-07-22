@@ -1,5 +1,5 @@
 ---
-tags: D3, JavaScript library, data visualization, PhantomCSS, beginner, WIP
+tags: D3, JavaScript library, data visualization, PhantomCSS, beginner
 language: JavaScript
 resources: 10
 ---
