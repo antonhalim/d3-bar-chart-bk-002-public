@@ -35,8 +35,11 @@ resources: 5
 * To run the tests you must be in the main folder `d3-bar-chart`. In the terminal, enter `casperjs test bar-chart/testsuite.js`.
 
 ### Getting Started
-* Require the D3 library in `index.html`.
-* Require `chart.js` also in `index.html`.
+* When you use an external JavaScript library, the first step is to require it. Go ahead and require the D3 library in `index.html`.
+* The second step will be to require your JavaScript code that uses the library. Add HTML to `index` the will require `chart.js`.
+* When you make a bar chart by hand, one of the first things you think about if what kind of scale to use. 
+* 
+* Another thing that you might think about when drawing a bar chart by hand is how large you want it to be. This will usually manifest as a width and height. In D3, these two values will be two values in an array that is passed as an argument to the `.range` method. Let's make the  
 * To know how to scale each bar in the barchart, you need to find the maximum length of a bar. In the `bar-chart/chart.js` file, make a new variable called `maxValue`. This variable will be equal to the maximum value in `election`. Though you could easily hardcode this value as 40, it would be good practice to interate through the array to find the highest value.
 * More instructions
 * More instructions
@@ -50,3 +53,5 @@ resources: 5
 * [CSS Tricks](http://css-tricks.com/) - [Using SVG](http://css-tricks.com/using-svg/)
 * [GitHub](https://github.com/) - [PhantomCSS](https://github.com/Huddle/PhantomCSS)
 * [CasperJS](http://casperjs.org/) - [Docs](http://casperjs.readthedocs.org/en/latest/)
+* [D3](https://github.com/mbostock/d3/) - [Linear Scale](https://github.com/mbostock/d3/wiki/Quantitative-Scales#linear)
+* [Aligned Left Blog](http://alignedleft.com) - [D3 Scales](http://alignedleft.com/tutorials/d3/scales)
