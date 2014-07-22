@@ -19,6 +19,8 @@ resources: 10
 || [Enter](#enter)|
 || [Width and Height](#width-and-height)
 || [Text](#text)
+|| [In Closing](#in-closing)
+|[Overview](#overview)| |
 || [Conclusion](#conclusion)
 
 ## Overview
