@@ -44,15 +44,25 @@ resources: 8
 ```javascript
 x.range([0, 420]);
 ```
-* One of the last things you probably think about when drawing a chart by hand is what the the min and max values for the data. In this case, the min value is clearly 4, but lets hardcode it as 0 to allow for some election counties to have a 0% participation rate in the election. In the next step, we'll find the highest percentage of participation.
-* To know how to scale each bar in the barchart, you need to find the maximum length of a bar. In the `bar-chart/chart.js` file, make a new variable called `maxTurnOut`. This variable will be equal to the maximum value in `election`. Though you could easily hardcode this value as 40, it would be good practice to interate through the array to find the highest value.
+* One of the last things you probably think about when drawing a chart by hand is what the data's min and max values are. In this case, the min value is clearly 4, but lets hardcode it as 0 to allow for some election counties to have a 0% participation rate in the election. In the next step, we'll find the highest percentage of participation.
+* Make a new variable called `maxTurnOut`. This variable will be equal to the maximum value in `election`. Though you could easily hardcode this value as 40, it would be good practice to interate through the array to find the highest value.
 * The linear scale has a `.domain` method that accepts and array of two values, much like the `.range` method above. Let's use the values 0 and maxTurnOut to set the domain.
 
 ```javascript
 x.domain([0, maxTurnOut]);
 ```
-* More instructions
-* More instructions
+* When drawing a chart by hand, you must select a poster board or a sheet of paper. This next step is kind of like that. It's time to choose the location of where the chart will be drawn. In this case, select the div with the class `bar-chart`. 
+
+```javascript
+var chart = d3.select(".bar-chart");
+```
+
+* When you draw a bar chart, you know where to find the data. D3, however, doesn't automatically know which data to use. You tell D3 to use the data `election` by 
+
+```javascript
+chart.selectAll("div").data(election);
+```
+
 * Mor instructions
 * Remove the "blah blah blah" text from the `bar-chart` div in `index.html`. It was just there because PhantomCSS does not reliably run the testing suite on empty divs.
 
@@ -64,5 +74,6 @@ x.domain([0, maxTurnOut]);
 * [GitHub](https://github.com/) - [PhantomCSS](https://github.com/Huddle/PhantomCSS)
 * [CasperJS](http://casperjs.org/) - [Docs](http://casperjs.readthedocs.org/en/latest/)
 * [D3](https://github.com/mbostock/d3/) - [Linear Scale](https://github.com/mbostock/d3/wiki/Quantitative-Scales#linear)
+* [D3](https://github.com/mbostock/d3/) - [Select All](https://github.com/mbostock/d3/wiki/Selections#d3_selectAll)
 * [Aligned Left Blog](http://alignedleft.com) - [D3 Scales](http://alignedleft.com/tutorials/d3/scales)
 * [Easy Calculation](http://easycalculation.com/) - [Linear Scale](http://easycalculation.com/maths-dictionary/linear_scale.html)
