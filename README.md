@@ -36,7 +36,10 @@ resources: 5
 
 ### Getting Started
 * To know how to scale each bar in the barchart, you need to find the maximum length of a bar. In the `bar-chart/chart.js` file, make a new variable called `maxValue`. This variable will be equal to the maximum value in `election`. Though you could easily hardcode this value, it would be good practice to interate through the array to find the highest value.
-* 
+* More instructions
+* More instructions
+* Mor instructions
+* Remove the "blah blah blah" text from the `bar-chart` div in `index.html`. It was just there because PhantomCSS does not reliably run the testing suite on empty divs.
 
 
 ## Resources
