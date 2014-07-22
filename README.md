@@ -29,9 +29,10 @@ resources: 5
   * [2012 Electoral Map](http://elections.nytimes.com/2012/ratings/electoral-map)
 
 ### Testing Suite
-* This lab relies on PhantomCSS for testing. All the code being tested, along with the testing file, can be found in the folder `bar-chart`. All other folders are for the testing framework. Write your JavaScript code in `bar-chart/chart.js` and alter HTML in `bar-chart/index.html`. If you're curious about PhantomCSS, check out its [ repo](https://github.com/Huddle/PhantomCSS).
+* This lab relies on PhantomCSS for testing. PhantomCSS takes a picture of the bar-chart div and compares it to a picture of the completed bar chart. If the pictures are somewhat similar, it then reports back about the percentage of difference. Screenshots are saved to the `screenshots` folder and failures are saved to the `failures` folder. Comparision images have `diff` in their name with differences displayed in pink. If you want to learn more about PhantomCSS, check out its [repo](https://github.com/Huddle/PhantomCSS).
+* All the code being tested, along with the testing file, can be found in the folder `bar-chart`. All other folders are for the testing framework. Write your JavaScript code in `bar-chart/chart.js` and alter HTML in `bar-chart/index.html`. 
 * Run `brew install casperjs --devel` from your terminal. PhantomCSS relies on CasperJS. Check out the [CasperJS docs](http://casperjs.org/) for more info.
-* To run the tests, from the main folder `d3-bar-chart`, enter `casperjs test bar-chart/testsuite.js`.
+* To run the tests you must be in the main folder `d3-bar-chart`. In the terminal, enter `casperjs test bar-chart/testsuite.js`.
 
 ### Getting Started
 * To know how to scale each bar in the barchart, you need to find the maximum length of a bar. In the `bar-chart/chart.js` file, make a new variable called `maxValue`. This variable will be equal to the maximum value in `election`. Though you could easily hardcode this value, it would be good practice to interate through the array to find the highest value.
