@@ -35,7 +35,7 @@ resources: 10
 * To run the tests you must be in the main folder `d3-bar-chart`. In the terminal, enter `casperjs test bar-chart/testsuite.js`.
 
 ### Getting Started
-* You're going to be making a simple bar graph for fake data of the voter turnout for the last election by county.
+* You're going to be making a simple bar graph for fake data of the voter turnout by county.
 * Make sure you read through the section on the testing suite and installed CasperJS.
 * When you use an external JavaScript library, the first step is to require it. Go ahead and require the D3 library in `index.html`. To check that the library is getting loaded correctly, type `d3` into the console when you open `index.html` in the browser. The console should return an object. If it returns `d3 is not defined`, go back and fix your code.
 * The second step will be to require your JavaScript code that uses the library. Add HTML to `index` the will require `chart.js`. Open `index.html` in your browser and type `election` the the console to make sure you required `chart.js` correctly. The console should return an array of objects.
